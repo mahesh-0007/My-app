@@ -1,0 +1,16 @@
+<h1>event-registration</h1>
+
+<label>Name: </label>
+<input type="text" [(ngModel)]="name" >
+<br>
+
+
+<button (click)="register()">register</button>
+
+
+<ol>
+
+    <li *ngFor="let name of names">{{ name }}</li>
+</ol>
+
+<button (click)="delete()">delete</button>

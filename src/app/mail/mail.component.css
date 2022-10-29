@@ -1,0 +1,13 @@
+.mail{
+    border: 1px solid black;
+    border-radius: 3px;
+}
+div:hover{
+    background-color: skyblue;
+    cursor: pointer;
+    box-shadow:3px 3px 5px gray;
+}
+div{
+    display: black;
+ 
+}
