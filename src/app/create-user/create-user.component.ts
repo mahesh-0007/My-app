@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormArrayName, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormArrayName, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-user',
@@ -10,8 +10,8 @@ export class CreateUserComponent implements OnInit {
 
   public userForm: FormGroup=new FormGroup(
     {
-      name: new FormControl(),
-      phone: new FormControl(),
+      name: new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
+      phone: new FormControl(null,[Validators.required,Validators.min(1000000000),Validators.max(9999999999)]),
       dob: new FormControl(),
       address:new FormGroup(
         {
