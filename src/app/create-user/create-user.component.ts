@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormArrayName, FormControl, FormGroup, Validators } from '@angular/forms';
+import { max } from 'rxjs';
 
 @Component({
   selector: 'app-create-user',
@@ -16,7 +17,7 @@ export class CreateUserComponent implements OnInit {
       address:new FormGroup(
         {
           city:new FormControl(),
-          pin: new FormControl()
+          pin: new FormControl(null,[Validators.required,Validators.min(1000000),Validators.max(999999)])
         }
       ),
       cards: new FormArray([]),
@@ -37,7 +38,7 @@ export class CreateUserComponent implements OnInit {
         {
           name: new FormControl(),
           expiry: new FormControl(),
-          Cvv: new FormControl()
+          Cvv: new FormControl(null,[Validators.required,Validators.min(100),Validators.max(999)])
         }
       )
     )
@@ -54,6 +55,7 @@ export class CreateUserComponent implements OnInit {
 
   submit(){
     console.log(this.userForm);
+    this.userForm.markAllAsTouched();
   }
 
 }

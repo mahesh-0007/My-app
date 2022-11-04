@@ -34,6 +34,11 @@
 
         <label>Pin: </label>
         <input type="number" formControlName="pin">
+        <div class="error" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">Pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">Pin should  contain min 6 digits</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">Pin should  contain max 6 digits</p>
+        </div>
         <br>
     </div>
 
@@ -48,6 +53,12 @@
             <input type="text" formControlName="expiry" placeholder="expiry">
             <br>
             <input type="text" formControlName="Cvv" placeholder="Cvv">
+             <div class="error" *ngIf="cardsFormArray.controls[i].get('Cvv')?.touched && cardsFormArray.controls[i].get('Cvv')?.invalid">
+                <p *ngIf="cardsFormArray.controls[i].get('Cvv')?.errors?.['required']">Cvv is required</p>
+                <p *ngIf="cardsFormArray.controls[i].get('Cvv')?.errors?.['min']">Cvv min 3 digits</p>
+                <p *ngIf="cardsFormArray.controls[i].get('Cvv')?.errors?.['max']">Cvv max 3 digits</p>
+
+             </div>
             <button class="btn btn-danger" (click)="delete(i)">delete</button>
             <br><br>
 
