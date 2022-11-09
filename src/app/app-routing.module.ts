@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { MailComponent } from './mail/mail.component';
 import { NotifyGuard } from './notify.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ParentComponent } from './parent/parent.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PowerComponent } from './power/power.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
@@ -61,7 +62,9 @@ const routes: Routes = [
    {path:'vehicle-details/:id',component:VehicleDetailsComponent},
    {path:'create-account',component:CreateAccountComponent,canDeactivate:[NotifyGuard]},
    {path:'create-user',component:CreateUserComponent},
-   {path:'create-product',component:CreateProductComponent}
+   {path:'create-product',component:CreateProductComponent},
+   {path:'edit-account/:id',component:CreateAccountComponent},
+   {path:'parent',component:ParentComponent}
   
   ]},
   {path:'',component:LoginComponent},

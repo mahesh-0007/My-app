@@ -1,0 +1,5 @@
+<p>parent works!</p>
+<input type="text" [(ngModel)]="a">
+<p>B value:{{b}}</p>
+
+<app-child [a]="a" (bEvent)="catch($event)"></app-child>

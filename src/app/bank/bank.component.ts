@@ -79,5 +79,8 @@ delete(id:string){
 view(id:string){
     this.router.navigateByUrl('/dashboard/bank-details/'+id);
 }
+edit(id:string){
+     this.router.navigateByUrl('/dashboard/edit-account/'+id);
+}
 
 }

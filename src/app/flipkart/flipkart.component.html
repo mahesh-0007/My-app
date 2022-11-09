@@ -1,15 +1,22 @@
-<div class="row" >
+<p>FLIPKART</p>
+ 
+<table class="table table-dark">
+    <thead>
 
-<div class="col-4 item" *ngFor="let flipkart of flipkarts">
+    </thead>
+    <tbody>
+        <tr *ngFor="let flipkart of flipkarts">
+            <td>{{ flipkart.id }}</td>
+            <td>{{ flipkart.title }}</td>
+            <td>{{ flipkart.price }}</td>
+            <td>{{ flipkart.description }}</td>
+            <td>{{ flipkart.category }}</td>
+            <td>
+                <img src="{{flipkart.image}}" width="50px" height="50px">
+            </td>
+            <app-star [rating]="flipkart.rating.rate" ></app-star>
+        
+        </tr>
 
-    <p>{{ flipkart.id }}</p>
-    <img src="{{ flipkart.image }}" width="100px" height="100px">
-    <p>{{ flipkart.title }}</p>
-    <p>{{ flipkart.price }}</p>
-    <p>{{ flipkart.description }}</p>
-    <p>{{ flipkart.category }}</p>
-    <p>{{ flipkart.image }}</p>
-    <p>{{ flipkart.rating }}</p>
-  
-</div>
-</div>
+    </tbody>
+</table>

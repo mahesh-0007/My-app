@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { BankService } from '../bank.service';
 
 @Component({
@@ -21,12 +22,44 @@ export class CreateAccountComponent implements OnInit {
     }
 
   )
-  constructor(private _bankservice:BankService) { }
+
+  public id:string="";
+
+  constructor(private _bankservice:BankService,private activatedRoute:ActivatedRoute) {
+    this.activatedRoute.params.subscribe(
+      (data:any)=>{
+       this.id=data.id;
+
+       this._bankservice.getAccount(this.id).subscribe(
+        (data:any)=>{
+          this.accountForm.patchValue(data);
+        }
+       )
+      }
+    )
+   }
 
   ngOnInit(): void {
   }
 
   submit(){
+
+    // edit
+    if(this.id){
+     
+      this._bankservice.updateAccount(this.id,this.accountForm.value).subscribe(
+        (data:any)=>{
+          alert("updated succesfully");
+        },
+        (error:any)=>{
+          alert("internal server error");
+        }
+      )
+      
+    }
+
+    // create
+    else{
       this._bankservice.createAccount(this.accountForm.value).subscribe(
         (data:any)=>{
           alert("created succesfully");
@@ -35,6 +68,8 @@ export class CreateAccountComponent implements OnInit {
           alert("internal server error");
         }
       )
+    }
+
   }
 
 }

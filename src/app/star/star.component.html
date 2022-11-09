@@ -1,15 +1,10 @@
-<label>Rating: </label>
-<select [(ngModel)]="rating">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-</select>
-<img *ngIf="rating==1" src="/assets/s1.jpeg"><br>
-<img *ngIf="rating==2" src="/assets/s2.jpeg"><br>
-<img *ngIf="rating==3" src="/assets/s3.jpeg"><br>
-<img *ngIf="rating==4" src="/assets/s4.jpeg"><br>
-<img *ngIf="rating==5" src="/assets/s5.jpeg">
+
+<img  src="/assets/s1.jpeg" *ngIf="rating<=5 && rating>4"><br>
+<img src="/assets/s2.jpeg" *ngIf="rating<=4 && rating>3"><br>
+<img  src="/assets/s3.jpeg" *ngIf="rating<=3 && rating>2"><br>
+<img  src="/assets/s4.jpeg" *ngIf="rating<=2 && rating>1"><br>
+<img  src="/assets/s5.jpeg" *ngIf="rating<=1 && rating>0">
+
+
 
 
