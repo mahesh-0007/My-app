@@ -40,6 +40,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ProductComponent } from './product/product.component';
+import { Cart2Component } from './cart2/cart2.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +81,10 @@ import { ChildComponent } from './child/child.component';
     CreateUserComponent,
     CreateProductComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ProductComponent,
+    Cart2Component,
+    NavComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { BankComponent } from './bank/bank.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CarsComponent } from './cars/cars.component';
 import { CartComponent } from './cart/cart.component';
+import { Cart2Component } from './cart2/cart2.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { CreateUserComponent } from './create-user/create-user.component';
@@ -21,11 +22,13 @@ import { GpayComponent } from './gpay/gpay.component';
 import { InterpolationComponent } from './interpolation/interpolation.component';
 import { LoginComponent } from './login/login.component';
 import { MailComponent } from './mail/mail.component';
+import { NavComponent } from './nav/nav.component';
 import { NotifyGuard } from './notify.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ParentComponent } from './parent/parent.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PowerComponent } from './power/power.component';
+import { ProductComponent } from './product/product.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { SquareComponent } from './square/square.component';
 import { StarComponent } from './star/star.component';
@@ -64,7 +67,10 @@ const routes: Routes = [
    {path:'create-user',component:CreateUserComponent},
    {path:'create-product',component:CreateProductComponent},
    {path:'edit-account/:id',component:CreateAccountComponent},
-   {path:'parent',component:ParentComponent}
+   {path:'parent',component:ParentComponent},
+   {path:'product',component:ProductComponent},
+   {path:'cart2',component:Cart2Component},
+   {path:'nav',component:NavComponent}
   
   ]},
   {path:'',component:LoginComponent},
